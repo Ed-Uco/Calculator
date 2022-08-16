@@ -1,5 +1,4 @@
 import './App.css';
-import logo from './images/logo.png';
 import Button from './components/Button';
 import Display from './components/Display';
 import ClearButton from './components/ClearButton';
@@ -16,14 +15,22 @@ function App() {
         setInput(input + val);
     };
     const calculateResult = () => {
-        setInput(evaluate(input));
+        if (input) {
+            setInput(evaluate(input));
+        }
+        else {
+            
+            alert('Please enter an expression');
+        }
      }
     
   return (
       <div className="App">
-          <div className="logo-container">
-              <img src={logo} className="logo" alt="logo principal" />
-          </div>
+          <div className="title-container">
+                <div className="app-title">
+                  <h3>Interactive Calculator</h3>
+                </div>
+           </div>
           <div className="container-calculator">
               <Display input={input} />
               <div className="row">

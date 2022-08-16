@@ -1,6 +1,6 @@
 import  '../styles/ClearButton.css';
 const ClearButton = (props) => (
-      <div className="clear-button">
+      <div className="clear-button" onClick = {props.manageClear}>
             {props.children}
       </div>
 )
